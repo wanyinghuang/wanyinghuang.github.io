@@ -43,19 +43,21 @@
             line-height: 1.5;
             border: 1px solid #ddd; /* Add a border around the abstract */
         }
+		
+		
 	</style>
 	
 	 <script>
-       function toggleAbstract(id) {
-        var abstract = document.getElementById('abstract-' + id);
-        var button = document.getElementById('button-' + id);
+      function toggleAbstract(number) {
+        var abstract = document.getElementById('abstract-' + number);
+        var link = document.getElementById('link-' + number);
+        
         if (abstract.style.display === 'none') {
             abstract.style.display = 'block';
-            button.innerHTML = 'abstract -';
+            link.textContent = 'abstract -';
         } else {
             abstract.style.display = 'none';
-            button.innerHTML = 'abstract +';
-            button.classList.add('active-button'); // Add this line to change style
+            link.textContent = 'abstract +';
         }
     }
     </script>
@@ -103,37 +105,37 @@
 <p>Hi, and welcome! I am a Ph.D. candidate in economics at the California Institute of Technology, advised by <a href="http://tamuz.caltech.edu
 ">Omer Tamuz</a>. My research interests lie in the field of microeconomic theory, with a specific focus on <b>information</b> and <b>social learning</b>. </p>
 
+<p> I will be on the job market during the 2023-2024 academic year.  <a href="mailto:whhuang@caltech.edu">whhuang@caltech.edu</a> | <a href="files/CV.pdf">CV</a> </p>
+</p>
+
+
 <p> Before joining Caltech, I received my Bachelor of Economics (with First Class Honors) from the University of Queensland in 2018, advised by <a href="https://researchers.uq.edu.au/researcher/2437">Priscilla Man</a> and  <a href="https://economics.uq.edu.au/profile/2264/jeffrey-kline">Jeffrey Kline</a>. Prior to that, I studied Economics at Shandong University. </p>
 
-<p> Feel free to reach out to me via email at <a href="mailto:whhuang@caltech.edu">whhuang@caltech.edu</a>, and you can also download my <a href="files/CV.pdf">CV</a>.</p> 
-
-<br>
-</p>
 </div>
-
 
 <div class="container mt-5 col-sm-8" id="Research">
 	   <h3>Research</h3>
     <ul> <!-- Add ul element here -->
-        <li class="mt-2">
-            <h6 class="d-inline"><a href="files/fads_learning.pdf">The Emergence of Fads in a Changing World</a></h6>
-            <button id="button-1" onclick="toggleAbstract(1)">abstract +</button>
-            <div id="abstract-1" class="abstract" style="display: none;">
-                <p>We study how fads emerge from social learning in a changing environment. We consider a simple sequential learning model in which rational agents arrive in order, each acting only once, and the underlying unknown state is constantly evolving. Each agent receives a private signal, observes all past actions of others, and chooses an action to match the current state. Since the state changes over time, cascades cannot last forever, and actions fluctuate too. We show that in the long run, actions change more often than the state. This describes many real-life faddish behaviors in which people often change their actions more frequently than what is necessary. </p>
+	<li class="mt-2">
+            <h6 class="d-inline">Learning from Unreliable Information</h6> (Job Market Paper -- Draft Coming Soon)
+			<br>
+			<div id="abstract-3" class="abstract" style="display;">
+             <h6 class="d-inline" class="abstract" style="font-size: 14px;"> We study whether individuals can learn the reliability of their information technology through social learning. We revisit the classic sequential social learning model, where agents arrive in order and make decisions based on the past actions of others and their private signals. However, there is uncertainty regarding the reliability of the common signal-generating process (information technology). We show that the achievement of learning in this setting is not guaranteed, and it depends crucially on the relative tail distributions between uninformative and informative signals. We identify the phenomenon of perpetual disagreement as the cause of learning and provide a characterization of learning in the canonical Gaussian environment.  			</h6>
             </div>
+			<br>
+        </li>
+	
+	
+        <li class="mt-2">
+            <h6 class="d-inline"><a href="files/fads_learning.pdf">The Emergence of Fads in a Changing World</a> 
             <br>
         </li>
 
         <li class="mt-2">
-            <h6 class="d-inline"><a href="files/learning_speed.pdf">Learning in Repeated Interactions on Networks</a></h6>
-            with Philipp Strack and Omer Tamuz, presented at EC'22 (Revise and Resubmit at Econometrica)
-            <button id="button-2" onclick="toggleAbstract(2)">abstract +</button>
-            <div id="abstract-2" class="abstract" style="display: none;">
-                <p>We study how long-lived, rational, exponentially discounting agents learn in a social network.
-In every period, each agent observes the past actions of his neighbors, receives a private signal, and chooses an action
-with the objective of matching the state. Since agents behave strategically, and since their actions depend on higher order beliefs, it is difficult to characterize equilibrium behavior. Nevertheless, we show that regardless of the size and shape of the network, and the patience of the agents, the speed of learning in any equilibrium is bounded from above by a constant that only depends on the private signal distribution. </p>
-            </div>
-            <br>
+            <h6 class="d-inline"><a href="files/learning_speed.pdf">Learning in Repeated Interactions on Networks</a></h6>   
+			<p>with Philipp Strack and Omer Tamuz, presented at EC'22 
+			<br>			
+			Revise and Resubmit at <i>Econometrica</i></p>
         </li>
     </ul>
 </div>
