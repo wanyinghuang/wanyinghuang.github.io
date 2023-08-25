@@ -35,7 +35,30 @@
 	font-family: 'Lmodern', serif;
 		margin-bottom: 50px; 
 	}
+	
+ .abstract {
+            padding: 10px;
+            background-color: #f7f7f7;
+            font-size: 14px;
+            line-height: 1.5;
+            border: 1px solid #ddd; /* Add a border around the abstract */
+        }
 	</style>
+	
+	 <script>
+       function toggleAbstract(id) {
+        var abstract = document.getElementById('abstract-' + id);
+        var button = document.getElementById('button-' + id);
+        if (abstract.style.display === 'none') {
+            abstract.style.display = 'block';
+            button.innerHTML = 'abstract -';
+        } else {
+            abstract.style.display = 'none';
+            button.innerHTML = 'abstract +';
+            button.classList.add('active-button'); // Add this line to change style
+        }
+    }
+    </script>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
@@ -82,10 +105,7 @@
 
 <p> Before joining Caltech, I received my Bachelor of Economics (with First Class Honors) from the University of Queensland in 2018, advised by <a href="https://researchers.uq.edu.au/researcher/2437">Priscilla Man</a> and  <a href="https://economics.uq.edu.au/profile/2264/jeffrey-kline">Jeffrey Kline</a>. Prior to that, I studied Economics at Shandong University. </p>
 
-<p> If you would like to reach out to me, please feel free to send an email to whhuang [at] caltech [dot] edu or visit me at Baxter Hall, room 210. </p> 
-
-
-You can find a PDF version of my CV available <a href="files/CV.pdf">here</a>. 
+<p> Feel free to reach out to me via email at <a href="mailto:whhuang@caltech.edu">whhuang@caltech.edu</a>, and you can also download my <a href="files/CV.pdf">CV</a>.</p> 
 
 <br>
 </p>
@@ -93,30 +113,37 @@ You can find a PDF version of my CV available <a href="files/CV.pdf">here</a>.
 
 
 <div class="container mt-5 col-sm-8" id="Research">
-	<h3> Research </h3>
-<!-- 
-	<h5 class="mt-3"> Working papers </h5>
-	<ol reversed>
- -->
-	
-	<li class="mt-2">
-    <h6 class="d-inline">"<a href="files/fads_learning.pdf">The Emergence of Fads in a Changing World</a>"</h6> 
-    <br>
-	</li>
-	
-	<li class="mt-2">
-    <h6 class="d-inline ">"<a href="files/learning_speed.pdf">Learning in Repeated Interactions on Networks</a>"</h6> with Philipp Strack and Omer Tamuz, presented at EC'22 
-    <br>
-	</li>
+	   <h3>Research</h3>
+    <ul> <!-- Add ul element here -->
+        <li class="mt-2">
+            <h6 class="d-inline"><a href="files/fads_learning.pdf">The Emergence of Fads in a Changing World</a></h6>
+            <button id="button-1" onclick="toggleAbstract(1)">abstract +</button>
+            <div id="abstract-1" class="abstract" style="display: none;">
+                <p>We study how fads emerge from social learning in a changing environment. We consider a simple sequential learning model in which rational agents arrive in order, each acting only once, and the underlying unknown state is constantly evolving. Each agent receives a private signal, observes all past actions of others, and chooses an action to match the current state. Since the state changes over time, cascades cannot last forever, and actions fluctuate too. We show that in the long run, actions change more often than the state. This describes many real-life faddish behaviors in which people often change their actions more frequently than what is necessary. </p>
+            </div>
+            <br>
+        </li>
 
+        <li class="mt-2">
+            <h6 class="d-inline"><a href="files/learning_speed.pdf">Learning in Repeated Interactions on Networks</a></h6>
+            with Philipp Strack and Omer Tamuz, presented at EC'22 (Revise and Resubmit at Econometrica)
+            <button id="button-2" onclick="toggleAbstract(2)">abstract +</button>
+            <div id="abstract-2" class="abstract" style="display: none;">
+                <p>We study how long-lived, rational, exponentially discounting agents learn in a social network.
+In every period, each agent observes the past actions of his neighbors, receives a private signal, and chooses an action
+with the objective of matching the state. Since agents behave strategically, and since their actions depend on higher order beliefs, it is difficult to characterize equilibrium behavior. Nevertheless, we show that regardless of the size and shape of the network, and the patience of the agents, the speed of learning in any equilibrium is bounded from above by a constant that only depends on the private signal distribution. </p>
+            </div>
+            <br>
+        </li>
+    </ul>
 </div>
 
 <div class = "container mt-5 col-sm-8" id="Teaching">
 <h3> Teaching </h3>
 <h6>Teaching Assistant at Caltech</h6> 
- <li><h6 class="d-inline" style="font-size: 14px;">Ma 3/103 -- Introduction to Probability and Statistics</h6>  (<a href="files/teaching/ma3/Recitation_questions.pdf">recitation questions</a>) </li> 
- <li><h6 class="d-inline" style="font-size: 14px;">EC 11 -- Introduction to Economics </h6></li>
- <li><h6 class="d-inline" style="font-size: 14px;">EC 105 -- Firms, Competition, and Industrial Organization </h6></li>
+ <li><h6 class="d-inline" style="font-size: 14px;">Mathematics (Ma 3/103) -- Introduction to Probability and Statistics</h6>  (<a href="files/teaching/ma3/Recitation_questions.pdf">recitation questions</a>) </li> 
+ <li><h6 class="d-inline" style="font-size: 14px;">Economics (EC 11) -- Introduction to Economics </h6></li>
+ <li><h6 class="d-inline" style="font-size: 14px;">Economics (EC 105) -- Firms, Competition, and Industrial Organization </h6></li>
 </div>
 
 </body>
