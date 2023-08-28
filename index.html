@@ -2,157 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<title>Wanying (Kate) Huang</title>
-	
-	<!-- Global site tag (gtag.js) - Google Analytics 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-NX2T0MVJLL"></script>
-	<script>
-  	window.dataLayer = window.dataLayer || [];
-  	function gtag(){dataLayer.push(arguments);}
-  	gtag('js', new Date());
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanying (Kate) Huang</title>
+    <style>
+        body {
+            font-size: 16px; /* Set a base font size */
+            margin: 0;
+            padding: 0;
+        }
 
-  	gtag('config', 'G-NX2T0MVJLL');
-	</script> -->
-	
-	<!-- Mathjax for Latex -->
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<style>
-	[id]::before {
-  	content: '';
-  	display: block;
-  	height:      75px;
-  	margin-top: -75px;
-  	visibility: hidden;
-	}
-	
-	body {
-	font-family: 'Lmodern', serif;
-		margin-bottom: 50px; 
-	}
-	
- .abstract {
+        .about-container {
+            display: flex;
+            align-items: flex-start; /* Align items to the top */
+            flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+            max-width: 800px; /* Limit the maximum width of the content */
+            margin: 0 auto; /* Center the content horizontally */
+        }
+
+        .description {
+            flex: 1;
             padding: 10px;
-            background-color: #f7f7f7;
+            min-width: 300px; /* Set a minimum width for the description */
+        }
+
+        .profile-photo {
+            flex: 0 0 30%; /* Set a fixed width for the profile photo */
+            padding: 20px;
+            text-align: right;
+        }
+		
+		header h1 {
+            font-size: 28px; /* Set the font size for the header */
+            margin: 0; /* Remove any default margin */
+        }
+		
+		 footer {
+			font-size: 12px;
+            text-align: center; /* Center align the content within the footer */
+            padding: 20px 0; /* Add some spacing for better appearance */
+        }
+		
+		.abstract {
+            padding: 10px;
+			background-color: #f7f7f7;
             font-size: 14px;
-            line-height: 1.5;
-            border: 1px solid #ddd; /* Add a border around the abstract */
+            line-height: 1.5; 
         }
 		
-		
-	</style>
-	
-	 <script>
-      function toggleAbstract(number) {
-        var abstract = document.getElementById('abstract-' + number);
-        var link = document.getElementById('link-' + number);
-        
-        if (abstract.style.display === 'none') {
-            abstract.style.display = 'block';
-            link.textContent = 'abstract -';
-        } else {
-            abstract.style.display = 'none';
-            link.textContent = 'abstract +';
-        }
-    }
-    </script>
+    </style>
 </head>
+<body>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+<header>
+<section class="about-container">
+    <div class="description">
+        <h1>Wanying (Kate) Huang</h1>
+    </div>
+</section>
+</header>
 
- 
-<nav class="navbar-expand-sm navbar bg-dark navbar-dark fixed-top">
-  	<div class="container-fluid">
-  	<div class="navbar-header">
-      <a class="navbar-brand" href="https://www.wanyinghuang.com/">Wanying (Kate) Huang</a>
-	</div>
-	<button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-     
-<!--
-	 <li class="nav-item">
-        <a class="nav-link" href="#Home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#Research">Research</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#Teaching">Teaching</a>
-      </li>
-      <!--<li class="nav-item">
-        <a class="nav-link" href="#Contact">Contact</a>
-      </li>  -->
-    </ul>
-  	</div>
-</nav>  
+<section class="about-container">
+    <div class="description">
+        <h2>About Me</h2>
+        <p>Hi, and welcome! I am a Ph.D. candidate in economics at the California Institute of Technology, advised by <a href="http://tamuz.caltech.edu
+">Omer Tamuz</a>. My research interests lie in the field of microeconomic theory, with a specific focus on information and social learning.</p>
+        
+		<p> I will be on the job market during the 2023-2024 academic year. </p> 
+		<p> Email: <a href="mailto:whhuang@caltech.edu">whhuang@caltech.edu</a> </p> 
+		<p> <a href="files/CV.pdf">Curriculum Vitae</a> </p> 
+		
+		<p> I received my Bachelor of Economics (with First Class Honors) from the University of Queensland in 2018, advised by <a href="https://researchers.uq.edu.au/researcher/2437">Priscilla Man</a> and  <a href="https://economics.uq.edu.au/profile/2264/jeffrey-kline">Jeffrey Kline</a>. Prior to that, I studied Economics at Shandong University. </p>
 
+		
+    </div>
+    <div class="profile-photo">
+        <img src="files/portrait_huang.jpg" class="rounded mx-auto d-block" alt="Wanying Huang" style="width:70%">
+    </div>
+	
+</section>
 
-<div class="container mt-5 pt-2 col-sm-8">
-
-<img src="files/katehuang.jpg" class="rounded mx-auto d-block" alt="Wanying Huang" style="width:30%">
-</div>
-
-<div class="container mt-5 col-sm-8" id="About Me">
-<h3> About me </h3>
-<p>Hi, and welcome! I am a Ph.D. candidate in economics at the California Institute of Technology, advised by <a href="http://tamuz.caltech.edu
-">Omer Tamuz</a>. My research interests lie in the field of microeconomic theory, with a specific focus on <b>information</b> and <b>social learning</b>. </p>
-
-<p> I will be on the job market during the 2023-2024 academic year.  
-<br>
-Email: <a href="mailto:whhuang@caltech.edu">whhuang@caltech.edu</a> 
-| <a href="files/CV.pdf">Curriculum Vitae</a> </p>
-</p>
-
-
-<p> Before joining Caltech, I received my Bachelor of Economics (with First Class Honors) from the University of Queensland in 2018, advised by <a href="https://researchers.uq.edu.au/researcher/2437">Priscilla Man</a> and  <a href="https://economics.uq.edu.au/profile/2264/jeffrey-kline">Jeffrey Kline</a>. Prior to that, I studied Economics at Shandong University. </p>
-
-</div>
-
-<div class="container mt-5 col-sm-8" id="Research">
-	   <h3>Research</h3>
-    <ul> <!-- Add ul element here -->
-	<li class="mt-2">
-            <h6 class="d-inline">Learning from Unreliable Information</h6> (Job Market Paper -- Draft Coming Soon)
-			<br>
-			<div id="abstract-3" class="abstract" style="display;">
-             <h6 class="d-inline" class="abstract" style="font-size: 14px;"> 
+<section class="about-container">
+    <div class="description">
+        <section id="research">
+    <h2>Research</h2>
+    <ul>
+            <li>Learning from Unreliable Information (Job Market Paper -- Draft Coming Soon)</li>
+            <div id="abstract" class="abstract">
 We study whether individuals can learn the reliability of their information technology through social learning. We revisit the classic sequential social learning model, where agents arrive in order and make decisions based on the past actions of others and their private signals. However, there is uncertainty regarding the reliability of the common signal-generating process (information technology). We show that the achievement of learning in this setting is not guaranteed, and it depends crucially on the relative tail distributions of private beliefs induced by uninformative and informative signals. We identify the phenomenon of perpetual disagreement as the cause of learning and provide a characterization of learning in the canonical Gaussian environment.  
-</h6>
 			 </div>
 			<br>
-        </li>
-	
-	
-        <li class="mt-2">
-            <h6 class="d-inline"><a href="files/fads_learning.pdf">The Emergence of Fads in a Changing World</a> 
-            <br>
-        </li>
+			<li><a href="files/fads_learning.pdf">The Emergence of Fads in a Changing World</a> </li>
+			<br>
+			<li><a href="files/learning_speed.pdf">Learning in Repeated Interactions on Networks</a>, with Philipp Strack and Omer Tamuz, presented at EC'22  </li>
+            <p>Revise and Resubmit at <i>Econometrica</i></p>
 
-        <li class="mt-2">
-            <h6 class="d-inline"><a href="files/learning_speed.pdf">Learning in Repeated Interactions on Networks</a></h6>   
-			<p>with Philipp Strack and Omer Tamuz, presented at EC'22 
-			<br>			
-			Revise and Resubmit at <i>Econometrica</i></p>
-        </li>
     </ul>
-</div>
+</section>
+	</div>
+</section>	
 
-<div class = "container mt-5 col-sm-8" id="Teaching">
-<h3> Teaching </h3>
-<h6>Teaching Assistant at Caltech</h6> 
- <li><h6 class="d-inline" style="font-size: 14px;">Mathematics (Ma 3/103) -- Introduction to Probability and Statistics</h6>  (<a href="files/teaching/ma3/Recitation_questions.pdf">recitation questions</a>) </li> 
- <li><h6 class="d-inline" style="font-size: 14px;">Economics (EC 11) -- Introduction to Economics </h6></li>
- <li><h6 class="d-inline" style="font-size: 14px;">Economics (EC 105) -- Firms, Competition, and Industrial Organization </h6></li>
-</div>
+<section class="about-container">
+    <div class="description">
+        <section id="teaching">
+    <h2>Teaching</h2>
+	<h4>Teaching Assistant at Caltech</h4> 
+    <ul>
+        <li>Mathematics (Ma 3/103) -- Introduction to Probability and Statistics  </li> 
+		<br>
+		<li>Economics (EC 11) -- Introduction to Economics</li>
+		<br>
+		<li>Economics (EC 105) -- Firms, Competition, and Industrial Organization</li>
 
+    </ul>
+</section>
+	</div>
+</section>	
+		
+
+<footer>
+    <div class="description">
+        <p>Updated: August, 2023</p>
+    </div>
+</footer>
 </body>
-
 </html>
