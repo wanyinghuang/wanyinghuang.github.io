@@ -19,17 +19,18 @@
             margin: 0 auto; /* Center the content horizontally */
         }
 
-        .description {
-            flex: 1;
-            padding: 10px;
-            min-width: 300px; /* Set a minimum width for the description */
-        }
+       .description {
+		flex: 1;
+		padding: 10px;
+		min-width: 300px; /* Set a minimum width for the description */
+		}
 
-        .profile-photo {
-            flex: 0 0 30%; /* Set a fixed width for the profile photo */
-            padding: 20px;
-            text-align: right;
-        }
+		.profile-photo {
+			float: right; /* Float the photo to the right */
+			margin-left: 20px; /* Add some margin on the left for spacing */
+			max-width: 30%; /* Limit the maximum width of the photo */
+			padding: 20px;
+		}
 		
 		header h1 {
             font-size: 28px; /* Set the font size for the header */
@@ -48,6 +49,7 @@
             font-size: 14px;
             line-height: 1.5; 
         }
+		
 		
     </style>
 </head>
@@ -72,7 +74,6 @@
 		<p> <a href="files/CV.pdf">Curriculum Vitae</a> </p> 
 		
 		<p> I received my Bachelor of Economics (with First Class Honors) from the University of Queensland in 2018, advised by <a href="https://researchers.uq.edu.au/researcher/2437">Priscilla Man</a> and  <a href="https://economics.uq.edu.au/profile/2264/jeffrey-kline">Jeffrey Kline</a>. Prior to that, I studied Economics at Shandong University. </p>
-
 		
     </div>
     <div class="profile-photo">
@@ -86,9 +87,9 @@
         <section id="research">
     <h2>Research</h2>
     <ul>
-            <li>Learning from Unreliable Information (Job Market Paper -- Draft Coming Soon)</li>
+            <li>Learning about Informativeness (Job Market Paper -- Draft Coming Soon)</li>
             <div id="abstract" class="abstract">
-We study whether individuals can learn the reliability of their information technology through social learning. We revisit the classic sequential social learning model, where agents arrive in order and make decisions based on the past actions of others and their private signals. However, there is uncertainty regarding the reliability of the common signal-generating process (information technology). We show that the achievement of learning in this setting is not guaranteed, and it depends crucially on the relative tail distributions of private beliefs induced by uninformative and informative signals. We identify the phenomenon of perpetual disagreement as the cause of learning and provide a characterization of learning in the canonical Gaussian environment.  
+We study whether individuals can learn the informativeness of their information technology through social learning. As in the classic sequential social learning model, agents arrive in order and make decisions based on the past actions of others and their private signals. There is uncertainty regarding the informativeness of the common signal-generating process. We show that the achievement of learning in this setting is not guaranteed, and depends crucially on the relative tail distributions of private beliefs induced by uninformative and informative signals. We identify the phenomenon of perpetual disagreement as the cause of learning and provide a characterization of learning in the canonical Gaussian environment.  
 			 </div>
 			<br>
 			<li><a href="files/fads_learning.pdf">The Emergence of Fads in a Changing World</a> </li>
