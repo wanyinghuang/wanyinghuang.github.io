@@ -51,7 +51,25 @@
             font-size: 14px;
             line-height: 1.5; 
         }
+
+		.small-text {
+    font-size: 12px; /* Smaller font size */
+}
 		
+		 /* Media Query for Mobile Devices */
+    @media (max-width: 600px) {
+        .about-container {
+            flex-direction: column;
+        }
+
+        .profile-photo {
+            width: 100%; /* Full width on smaller screens */
+            order: -1; /* Makes the photo appear at the top */
+        }
+
+        .description {
+            min-width: auto; /* Adjusts the minimum width to auto on small screens */
+        }
 		
     </style>
 </head>
@@ -59,25 +77,33 @@
 
 <header>
 <section class="about-container">
-    <div class="description">
-        <h1>Wanying (Kate) Huang</h1>
+     <div style="background: #f7f7f7; padding: 1.5rem; padding-top: 0.8rem;">
+    <div style="font-family:Roboto; font-weight: lighter; letter-spacing: 0.08em; text-transform:uppercase;margin-top: 2rem">
+      <div style=" font-size:28px;line-height:1">
+        <div style="margin-bottom: 0.25rem">Wanying (Kate) Huang</div>
+    </div>
     </div>
 </section>
 </header>
 
 <section class="about-container">
     <div class="description">
-        <p>Hi, and welcome! I just received my Ph.D. in social science (economics) from the California Institute of Technology, advised by <a href="http://tamuz.caltech.edu
-">Omer Tamuz</a>. In September 2024, I will be joining Monash University in Melbourne, Australia, as an Assistant Professor of Economics. </p>
+        <p>Hi, and welcome! I am an Assistant Professor of Economics (Senior Lecturer in Australia) at <a href="https://www.monash.edu/business/home"> Monash University.</a> 
+		My research interests are in microeconomic theory, with 
+		a focus on information, social learning, and its applications. </p>
+		
+		I completed my Bachelor of Economics (Honours) from the University of Queensland. In 2024, I received my Ph.D. in Social Science (Economics) from the California Institute of Technology, 
+		advised by <a href="http://tamuz.caltech.edu
+">Omer Tamuz</a>. </p>
 
-I am interested in microeconomic theory, with a focus on information, social learning, and its applications.</p>
+
 				
 		<p> My <a href="files/CV.pdf">Curriculum Vitae</a> </p> 
-		<p> You can reach me at <a href="mailto:kate.wanyinghuang@gmail.com">kate.wanyinghuang@gmail.com</a>. </p>  </p>    
+		<p> You can reach me at <a href="mailto:kate.huang@monash.edu">kate.huang@monash.edu</a> or visit me at Room 334, Building 6, Clayton Campus (<a href="https://maps.app.goo.gl/ing9RsSCtLEKudQ99">map</a>). </p>  </p>    
    </div>
 	
     <div class="profile-photo">
-        <img src="files/portrait_huang.jpg" class="rounded mx-auto d-block" alt="Wanying Huang" style="width:80%">
+        <img src="files/portrait_huang.jpg" class="rounded mx-auto d-block" alt="Wanying Huang" style="width:70%">
     </div>
 	
 	
@@ -86,24 +112,22 @@ I am interested in microeconomic theory, with a focus on information, social lea
 <section class="about-container">
     <div class="description">
         <section id="research">	
-<h3> Research </h3>
-    <ol>
-            <li><a href="files/JMP_informativeness.pdf"> Learning about Informativeness</a>, presented at EC24, recipient of the <a href="https://ec24.sigecom.org/program/main-technical-program/">EC24 Best Student Paper Award</a></li>
+<h3> Working papers </h3>
+		<ul>
+			<p><li>"<a href="files/JMP_informativeness.pdf">Learning about Informativeness</a>"<br/></li>
+			presented at EC24, recipient of the <a href="https://ec24.sigecom.org/program/main-technical-program/">EC24 Best Student Paper Award</a><p/>
 
-			<br>
-			<li><a href="files/fads_learning.pdf">The Emergence of Fads in a Changing World</a> </li>
+			<p><li>"<a href="files/fads_learning.pdf">The Emergence of Fads in a Changing World</a>"<br/></li></p>
 			
+			
+			<p><li>"Social Learning in Lung Transplant Decision" with Laura Doval, Federico Echenique and Yi Xin <br/></li>
+			
+		</ul>	
 			<br>
-			<li><a href="files/learning_speed.pdf">Learning in Repeated Interactions on Networks</a>, with Philipp Strack and Omer Tamuz
-			<br>
-			<b>Econometrica, 2024</b>, presented at EC22 </li>
-			<br>
-			<li> Social Learning in Lung Transplant Decisions, with Laura Doval, Federico Echenique and Yi Xin </li> 
-				
-    </ol>
-	
-	
-	
+<h3> Publications </h3>
+	<ul>
+	<li>"<a href="files/learning_speed.pdf">Learning in Repeated Interactions on Networks</a>" with Philipp Strack and Omer Tamuz<br/></li>
+	<b>Econometrica, 2024</b>, presented at EC22 
 	</ul>
 </section>
 	</div>
@@ -113,7 +137,8 @@ I am interested in microeconomic theory, with a focus on information, social lea
     <div class="description">
         <section id="teaching">
     <h3>Teaching</h3>
-	<h4>Teaching Assistant at Caltech</h4> 
+	
+	<h5>Teaching Assistant at Caltech</h5> 
     <ul>
     	<li>Economics/Computer Science (EC/CS 149) -- Algorithmic Economics  </li>
 
@@ -122,7 +147,6 @@ I am interested in microeconomic theory, with a focus on information, social lea
 		<li>Economics (EC 11) -- Introduction to Economics</li>
 		
 		<li>Economics (EC 105) -- Firms, Competition, and Industrial Organization</li>
-
     </ul>
 </section>
 	</div>
@@ -131,7 +155,7 @@ I am interested in microeconomic theory, with a focus on information, social lea
 
 <footer>
     <div class="description">
-        <p>Updated: June 2024</p>
+        <p>Updated: September 2024</p>
     </div>
 </footer>
 </body>
