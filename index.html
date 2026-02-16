@@ -4,93 +4,161 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanying (Kate) Huang </title>
-    <style>
+        <style>
         body {
-			font-family: "Times New Roman", serif;
-            font-size: 16px; /* Set a base font size */
+            font-family: "Times New Roman", serif;
+            font-size: 16px;
             margin: 0;
             padding: 0;
         }
 
         .about-container {
             display: flex;
-            align-items: flex-start; /* Align items to the top */
-            flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
-            max-width: 700px; /* Limit the maximum width of the content */
-            margin: 0 auto; /* Center the content horizontally */
-			background-color: #f0f0f0; /* Make the container gray */
-        }
-
-       .description {
-		flex: 1;
-		padding: 10px;
-		min-width: 300px; /* Set a minimum width for the description */
-		}
-
-		.profile-photo {
-			float: right; /* Float the photo to the right */
-			margin-left: 20px; /* Add some margin on the left for spacing */
-			max-width: 30%; /* Limit the maximum width of the photo */
-			padding: 20px;
-		}
-		
-		header h1 {
-            font-size: 28px; /* Set the font size for the header */
-            margin: 0; /* Remove any default margin */
-        }
-		
-		 footer {
-			font-size: 12px;
-            text-align: center; /* Center align the content within the footer */
-            padding: 20px 0; /* Add some spacing for better appearance */
-        }
-		
-		.abstract {
-            padding: 10px;
-			background-color: #f7f7f7;
-            font-size: 14px;
-            line-height: 1.5; 
-        }
-
-		.small-text {
-    font-size: 12px; /* Smaller font size */
-}
-		
-		 /* Media Query for Mobile Devices */
-    @media (max-width: 600px) {
-        .about-container {
-            flex-direction: column;
-        }
-
-        .profile-photo {
-            width: 100%; /* Full width on smaller screens */
-            order: -1; /* Makes the photo appear at the top */
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #f0f0f0;
         }
 
         .description {
-            min-width: auto; /* Adjusts the minimum width to auto on small screens */
+            flex: 1;
+            padding: 10px;
+            min-width: 300px;
         }
-		
+
+        .bio-section {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+        }
+
+        .bio-section .description {
+            min-width: 0;
+        }
+
+        .bio-section .profile-photo {
+            width: min(190px, 25vw);
+            margin-left: 20px;
+            padding: 0;
+            flex: 0 0 auto;
+        }
+
+        .profile-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 6px solid #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
+            box-sizing: border-box;
+        }
+
+        .chinese-name {
+            display: block;
+            width: 100%;
+            margin-top: 0.45em;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: #222;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        footer {
+            font-size: 12px;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .abstract {
+            padding: 10px;
+            background-color: #f7f7f7;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        
+
+        .subbullet-small {
+            font-size: 0.9em;
+            margin-top: 0.25em;
+        }
+        .name-banner {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #f7f7f7;
+            padding: 1.5rem;
+            padding-top: 0.8rem;
+            box-sizing: border-box;
+        }
+
+        .name-banner-title {
+            font-family: 'Times New Roman', serif;
+            font-weight: lighter;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 2rem;
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        @media (max-width: 900px) {
+            .bio-section .profile-photo {
+                width: min(150px, 30vw);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .name-banner {
+                max-width: 92vw;
+                padding: 1rem;
+                padding-top: 0.6rem;
+            }
+
+            .name-banner-title {
+                margin-top: 1.2rem;
+            }
+
+            .about-container {
+                flex-direction: column;
+                max-width: 92vw;
+            }
+
+            .bio-section {
+                flex-wrap: wrap;
+            }
+
+            .bio-section .profile-photo {
+                width: min(130px, 40vw);
+                margin: 0.6em auto 0;
+            }
+
+            .description {
+                min-width: auto;
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
-<section class="about-container">
-     <div style="background: #f7f7f7; padding: 1.5rem; padding-top: 0.8rem;">
-    <div style="font-family:'Times New Roman', serif;; font-weight: lighter; letter-spacing: 0.08em; text-transform:uppercase;margin-top: 2rem">
-      <div style=" font-size:28px;line-height:1">
+<section class="name-banner">
+    <div class="name-banner-title">
         <div style="margin-bottom: 0.25rem">Wanying (Kate) Huang</div>
-    </div>
     </div>
 </section>
 </header>
 
-<section class="about-container">
+<section class="about-container bio-section">
     <div class="description">
-        <p>Hi, and welcome! I am an Assistant Professor of Economics (Senior Lecturer in Australia) at <a href="https://www.monash.edu/business/home"> Monash University.</a> 
+        <p>Hi, and welcome! I am a Senior Lecturer in Economics (equivalent to an Assistant Professor in the US) at <a href="https://www.monash.edu/business/home"> Monash University</a> in Melbourne, Australia.  
 		My research interests are in microeconomic theory, with 
-		a focus on information, social learning, and its applications. </p>
+		a focus on information, social learning, and their applications. </p>
 		
 		I completed my Bachelor of Economics (Honours) from the University of Queensland. In 2024, I received my Ph.D. in Social Science (Economics) from the California Institute of Technology, 
 		advised by <a href="http://tamuz.caltech.edu
@@ -98,18 +166,19 @@
 
 
 				
-		<p> My <a href="files/CV_huang.pdf">Curriculum Vitae</a> </p> 
-		<p> You can reach me at <a href="mailto:kate.huang@monash.edu">kate.huang@monash.edu</a> or visit me at Room 334, Building 6, Clayton Campus (<a href="https://maps.app.goo.gl/ing9RsSCtLEKudQ99">map</a>). </p>  </p>    
+		<p> My <a href="files/CV_huang.pdf">Curriculum Vitae</a>. </p> 
+		<p> You can reach me at <a href="mailto:kate.huang@monash.edu">kate.huang@monash.edu</a>. </p>    
         </div>
 	
     <div class="profile-photo">
-        <img src="files/portrait_huang.jpg" class="rounded mx-auto d-block" alt="Wanying Huang" style="width:70%">
+        <img src="files/portrait_huang.jpg" class="rounded mx-auto d-block" alt="Wanying Huang" >
+       <!-- <div class="chinese-name">&#40644;&#23113;&#33721;</div> -->
     </div>
 	
 	
 </section>
 
-<section class="about-container">
+<section class="about-container bio-section">
     <div class="description">
         <section id="research">	
 <h3> Working papers </h3>
@@ -118,8 +187,14 @@
 			<p><li>"<a href="files/papers/informativeness.pdf">Learning about Informativeness</a>"<br/></li>
 			presented at EC24, recipient of the <a href="https://ec24.sigecom.org/program/main-technical-program/">EC24 Best Student Paper Award</a><p/>
 
-			<p><li>"<a href="files/papers/fads.pdf">The Emergence of Fads in a Changing World</a>"<br/> R&R at the Journal of Economic Theory</li></p>
-			
+			<p><li>"<a href="files/papers/action_volatility.pdf">Action Volatility in a Changing World</a>" 
+	<ul class="subbullet-small">
+		<li>previously titled "The Emergence of Fads in a Changing World"</li>
+	</ul>
+    	<ul class="subbullet-small">
+		<li>R&R at the <b>Journal of Economic Theory</b></li>
+	</ul>
+</li></p>
 			
 			<p><li>"<a href="files/papers/lungs.pdf">Social Learning in Lung Transplant Decision</a>" with Laura Doval, Federico Echenique and Yi Xin <br/></li>
 			
@@ -135,7 +210,7 @@
 	</div>
 </section>	
 
-<section class="about-container">
+<section class="about-container bio-section">
     <div class="description">
         <section id="teaching">
     <h3>Teaching</h3>
@@ -166,3 +241,23 @@
 </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
