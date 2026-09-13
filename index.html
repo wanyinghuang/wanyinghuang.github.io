@@ -7,19 +7,44 @@
     <style>
         body {
             font-family: "Times New Roman", serif;
-            font-size: 16px;
+            font-size: 18px;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f6f6f6;
+            background-color: #ffffff;
+        }
+
+        .page-frame {
+            max-width: 800px;
+            margin: 2.5rem auto;
+            -webkit-clip-path: polygon(
+                0% 3px, 6% 0px, 13% 4px, 20% 1px, 27% 5px, 34% 0px, 41% 3px, 48% 1px,
+                55% 4px, 62% 0px, 69% 3px, 76% 1px, 83% 4px, 90% 0px, 100% 2px,
+                100% calc(100% - 3px),
+                93% 100%, 86% calc(100% - 4px), 79% calc(100% - 1px), 72% 100%,
+                65% calc(100% - 3px), 58% 100%, 51% calc(100% - 4px), 44% 100%,
+                37% calc(100% - 2px), 30% calc(100% - 5px), 23% 100%, 16% calc(100% - 3px),
+                9% calc(100% - 1px), 0% calc(100% - 4px)
+            );
+            clip-path: polygon(
+                0% 3px, 6% 0px, 13% 4px, 20% 1px, 27% 5px, 34% 0px, 41% 3px, 48% 1px,
+                55% 4px, 62% 0px, 69% 3px, 76% 1px, 83% 4px, 90% 0px, 100% 2px,
+                100% calc(100% - 3px),
+                93% 100%, 86% calc(100% - 4px), 79% calc(100% - 1px), 72% 100%,
+                65% calc(100% - 3px), 58% 100%, 51% calc(100% - 4px), 44% 100%,
+                37% calc(100% - 2px), 30% calc(100% - 5px), 23% 100%, 16% calc(100% - 3px),
+                9% calc(100% - 1px), 0% calc(100% - 4px)
+            );
+            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.1));
         }
 
         .about-container {
             display: flex;
             align-items: flex-start;
             flex-wrap: wrap;
-            max-width: 700px;
-            margin: 0 auto;
             background-color: #f0f0f0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch' result='noise'/%3E%3CfeColorMatrix in='noise' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='2' intercept='-0.5'/%3E%3CfeFuncG type='linear' slope='2' intercept='-0.5'/%3E%3CfeFuncB type='linear' slope='2' intercept='-0.5'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+            background-repeat: repeat;
         }
 
         .description {
@@ -29,20 +54,31 @@
         }
 
         .bio-section {
-            display: flex;
-            align-items: flex-start;
-            flex-wrap: nowrap;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-template-areas:
+                "tabs  photo"
+                "text  photo";
+            align-items: start;
+            column-gap: 20px;
+        }
+
+        .bio-section .tabs-nav {
+            grid-area: tabs;
+            padding-left: 10px;
+            padding-right: 10px;
+            box-sizing: border-box;
         }
 
         .bio-section .description {
+            grid-area: text;
             min-width: 0;
         }
 
         .bio-section .profile-photo {
+            grid-area: photo;
             width: min(190px, 25vw);
-            margin-left: 20px;
             padding: 0;
-            flex: 0 0 auto;
         }
 
         .profile-photo img {
@@ -117,6 +153,34 @@
             font-size: 1.08em;
         }
 
+        .year-heading {
+            margin-top: 1em;
+            margin-bottom: 0.3em;
+            font-weight: bold;
+            font-size: 0.95em;
+            color: #555555;
+        }
+
+        .runs-group {
+            margin-top: 0.8em;
+        }
+
+        .runs-group summary {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.95em;
+            color: #555555;
+            padding: 0.2em 0;
+        }
+
+        .runs-group summary:hover {
+            color: #000000;
+        }
+
+        .runs-group .teaching-list {
+            margin-top: 0.5em;
+        }
+
         .teaching-list {
             list-style: none;
             padding-left: 1.1em;
@@ -148,20 +212,38 @@
         }
 
         .name-banner {
-            max-width: 700px;
-            margin: 0 auto;
             background: #f7f7f7;
             padding: 1.5rem;
-            padding-top: 0.8rem;
             box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+        }
+
+        .name-banner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-image: url("files/eucalyptus_gum_nut.png");
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 68% auto;
+            opacity: 0.45;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 8%, black 45%);
+            mask-image: linear-gradient(to right, transparent 0%, transparent 8%, black 45%);
+            pointer-events: none;
         }
 
         .name-banner-title {
+            position: relative;
+            z-index: 1;
             font-family: "Times New Roman", serif;
             font-weight: lighter;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            margin-top: 2rem;
             font-size: 28px;
             line-height: 1;
         }
@@ -176,19 +258,22 @@
 
         .tab-button {
             font-family: "Times New Roman", serif;
-            font-size: 16px;
+            font-size: 17px;
             padding: 7px 18px;
             border: 1px solid #b7b7b7;
             border-bottom: none;
             background: linear-gradient(to bottom, #fafafa 0%, #ececec 100%);
             color: #333333;
             cursor: pointer;
-            transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+            position: relative;
+            transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
         }
 
         .tab-button:hover {
             background: linear-gradient(to bottom, #ffffff 0%, #ededed 100%);
             color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
         }
 
         .tab-button:focus {
@@ -222,28 +307,34 @@
         }
 
         @media (max-width: 600px) {
+            .page-frame {
+                max-width: 92vw;
+                margin: 1.2rem auto;
+            }
+
             .name-banner {
-                max-width: 92vw;
                 padding: 1rem;
-                padding-top: 0.6rem;
+                min-height: 110px;
             }
 
-            .name-banner-title {
-                margin-top: 1.2rem;
-            }
-
-            .about-container {
-                flex-direction: column;
-                max-width: 92vw;
+            .name-banner::before {
+                background-size: 78% auto;
+                -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 4%, black 40%);
+                mask-image: linear-gradient(to right, transparent 0%, transparent 4%, black 40%);
+                opacity: 0.3;
             }
 
             .bio-section {
-                flex-wrap: wrap;
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "tabs"
+                    "photo"
+                    "text";
             }
 
             .bio-section .profile-photo {
                 width: min(130px, 40vw);
-                margin: 0.6em auto 0;
+                margin: 0.8em auto;
             }
 
             .description {
@@ -254,6 +345,7 @@
 </head>
 <body>
 
+<div class="page-frame">
 <header>
 <section class="name-banner">
     <div class="name-banner-title">
@@ -263,15 +355,16 @@
 </header>
 
 <section class="about-container bio-section">
-    <div class="description">
-        <div class="tabs-nav">
-            <button class="tab-button active" type="button" data-tab="home">Home</button>
-            <button class="tab-button" type="button" data-tab="research">Research</button>
-            <button class="tab-button" type="button" data-tab="teaching">Teaching</button>
-        </div>
+    <div class="tabs-nav">
+        <button class="tab-button active" type="button" data-tab="home">Home</button>
+        <button class="tab-button" type="button" data-tab="research">Research</button>
+        <button class="tab-button" type="button" data-tab="teaching">Teaching</button>
+        <button class="tab-button" type="button" data-tab="misc">Misc.</button>
+    </div>
 
+    <div class="description">
         <section id="home" class="tab-panel active">
-            <p>Hi, and welcome! I am a Senior Lecturer in Economics (equivalent to an Assistant Professor in the US) at <a href="https://www.monash.edu/business/home">Monash University</a> in Melbourne, Australia. My research interests are in microeconomic theory, with a focus on information, social learning, and their applications.</p>
+            <p>Hi, and welcome! I am a Senior Lecturer in Economics (equivalent to an Assistant Professor in the US) at <a href="https://www.monash.edu/business/home">Monash University</a> in Melbourne, Australia. My research interests are in microeconomic theory, with a focus on social learning, beliefs and preferences, and their applications.</p>
 
             <p>I completed my Bachelor of Economics (Honours) from the University of Queensland. In 2024, I received my Ph.D. in Social Science (Economics) from the California Institute of Technology, advised by <a href="http://tamuz.caltech.edu">Omer Tamuz</a>.</p>
 
@@ -281,7 +374,21 @@
 
         <section id="research" class="tab-panel">
             <h3>Working papers</h3>
-            <ul class="paper-list">
+        <ul class="paper-list">
+                <li>"<a href="files/papers/DistrBeliefsPaper.pdf">Belief Uncertainty</a>" with Marina Agranov 
+                <ul class="subbullet-small">
+                 <li>
+                    <a href="files/papers/DistrBeliefsOnline.pdf">[Online Appendix]</a>
+                    </li>
+                </ul>
+                </li>
+                  <li>"<a href="files/papers/AI_stated_vs_revealed.pdf">Should I State or Should I Show? Aligning AI with Human Preferences</a>" with Keaton Ellis 
+                <ul class="subbullet-small">
+                 <li>
+                    <a href="files/papers/AI_stated_vs_revealed_OnlineAppendix.pdf">[Online Appendix]</a>
+                    </li>
+                </ul>
+                </li>
                 <li>
                     "<a href="files/papers/learning_inefficiency.pdf">On the Inefficiency of Social Learning</a>" with Florian Brandl and Atulya Jain
                  <ul class="subbullet-small">
@@ -302,19 +409,10 @@
                         <li>R&amp;R at the <b>Journal of Economic Theory</b></li>
                     </ul>
                 </li>
-                
-
                 <li>"<a href="files/papers/lungs.pdf">Social Learning in Lung Transplant Decision</a>" with Laura Doval, Federico Echenique and Yi Xin</li>
-                <li>"<a href="files/papers/AI_stated_vs_revealed.pdf">Should I State or Should I Show? Aligning AI with Human Preferences</a>" with Keaton Ellis 
-                <ul class="subbullet-small">
-                 <li>
-                    <a href="files/papers/AI_stated_vs_revealed_OnlineAppendix.pdf">[Online Appendix]</a>
-                    </li>
-                </ul>
-                </li>
-                            </ul>
+        </ul>
 
-            <h3 class="section-gap">Publications</h3>
+            <h3 class="section-gap">Published and Forthcoming papers</h3>
             <ul class="paper-list">
                   <li>"<a href="files/papers/CPE.pdf">Correlated Perfect Equilibrium</a>" with Jeffrey Kline and Priscilla Man
                       <span class="paper-meta-line">Accepted at <b>Economic Theory</b></span>
@@ -345,6 +443,47 @@
                 <li><span class="course-code">EC 105</span> - Firms, Competition, and Industrial Organization</li>
             </ul>
         </section>
+
+        <section id="misc" class="tab-panel">
+            <p>I like running and hiking. Here is a list of some longer runs and hikes that I had fun with.</p>
+
+            <details class="runs-group">
+              <summary>Post Grad School</summary>
+            <ul class="teaching-list">
+                <li>Wonderland Track (30k), 2026 </li>
+                <li>Razorback Run (22k), 2026</li>
+                <li>Two Bays Trail Run (28k), 2026 </li>
+                <li>Barkin' Mad Ultra (20k), 2025 (with Dusty) </li>
+                <li>Mt Buffalo Sky Marathon, 2025 </li>
+                <li>Tour du Mont Blanc, 2024</li>
+            </ul>
+            </details>
+
+            <details class="runs-group">
+              <summary>During Grad School</summary>
+            <ul class="teaching-list">
+                <li>Avalon Benefit Run (50k), 2023</li>
+                <li>Bryce Canyon Ultra (50k), 2022</li>
+                <li>Sawback Trail (Banff to Lake Louise), 2022</li>
+                <li>High Sierra Trail (to Hamilton Lake), 2022</li>
+                <li>Trans-Zion Trek, 2021</li>
+                <li>Split Mountain, CA, 2021</li>
+                <li>Grand Canyon (South Kaibab to Bright Angel), 2021</li>
+                <li>Half Dome, 2021</li>
+                <li>Mt Langley, CA, 2021</li>
+                <li>LA Marathon, 2021</li>
+            </ul>
+            </details>
+
+            <details class="runs-group">
+              <summary>Before Grad School</summary>
+            <ul class="teaching-list">
+                <li>Mt Bartle Frere, Cairns </li>
+                <li>The Overland Track, Tasmania </li>
+                <li>Jinan to Qingdao via bicycle, China</li>
+            </ul>
+            </details>
+        </section>
     </div>
 
     <div class="profile-photo" id="profile-photo">
@@ -352,6 +491,7 @@
        <!-- <div class="chinese-name">&#40644;&#23113;&#33721;</div> -->
     </div>
 </section>
+</div>
 
 <footer>
     <div class="description">
