@@ -111,12 +111,6 @@
             margin: 0;
         }
 
-        footer {
-            font-size: 12px;
-            text-align: center;
-            padding: 20px 0;
-        }
-
         .abstract {
             padding: 10px;
             background-color: #f7f7f7;
@@ -162,24 +156,128 @@
             color: #555555;
         }
 
+
+        .link-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.4em 0 0;
+        }
+
+        .link-list li {
+            margin-bottom: 0.4em;
+        }
+
+        .link-note {
+            display: block;
+            margin-top: 0.1em;
+            font-size: 0.8em;
+            color: #777777;
+        }
+
         .runs-group {
-            margin-top: 0.8em;
+            margin-top: 0.6em;
         }
 
         .runs-group summary {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
             cursor: pointer;
+            list-style: none;
+            padding: 0.45em 0.8em;
             font-weight: bold;
             font-size: 0.95em;
-            color: #555555;
-            padding: 0.2em 0;
+            color: #444444;
+        }
+
+        .runs-group summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .runs-group summary::before {
+            content: "\25B8";
+            font-size: 0.85em;
+            color: #888888;
+            transition: transform 0.15s ease;
+        }
+
+        .runs-group[open] summary::before {
+            transform: rotate(90deg);
         }
 
         .runs-group summary:hover {
             color: #000000;
         }
 
-        .runs-group .teaching-list {
-            margin-top: 0.5em;
+        .running-section > summary {
+            display: flex;
+            align-items: center;
+            gap: 0.45em;
+            cursor: pointer;
+            list-style: none;
+            font-size: 1.17em;
+            font-weight: bold;
+        }
+
+        .running-section > summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .running-section > summary::before {
+            content: "\25B8";
+            font-size: 0.7em;
+            color: #888888;
+            transition: transform 0.15s ease;
+        }
+
+        .running-section[open] > summary::before {
+            transform: rotate(90deg);
+        }
+
+        .running-section > summary:hover {
+            color: #444444;
+        }
+
+        .running-section {
+            margin-top: 1.2em;
+        }
+
+        .running-intro {
+            margin: 0.5em 0 0.3em;
+        }
+
+        .running-section .runs-group {
+            font-size: 0.92em;
+        }
+
+        .run-list {
+            list-style: none;
+            margin: 0;
+            padding: 0.1em 0.8em 0.5em 2em;
+            font-size: 0.95em;
+        }
+
+        .run-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 1em;
+            padding: 0.3em 0;
+            border-bottom: 1px dotted #cccccc;
+        }
+
+        .run-list li:last-child {
+            border-bottom: none;
+        }
+
+        .run-note {
+            font-size: 0.85em;
+            color: #777777;
+        }
+
+        .run-year {
+            flex-shrink: 0;
+            color: #777777;
+            font-variant-numeric: tabular-nums;
         }
 
         .teaching-list {
@@ -195,6 +293,11 @@
 
         .teaching-list li:last-child {
             margin-bottom: 0;
+        }
+
+        .course-note {
+            font-size: 0.85em;
+            color: #555555;
         }
 
         .course-code {
@@ -441,8 +544,9 @@
             <h5 class="teaching-role">Instructor at Monash</h5>
             <ul class="teaching-list">
                 <li>
-                    <span class="course-code">ECC3000</span> - Advanced Microeconomics, 2025 & 2026
-                    <span class="paper-meta-line">A third-year undergraduate elective in microeconomic theory (Semester 1 offering).</span>
+                    <span class="course-code">ECC3000</span> - Advanced Microeconomics, Semester 1, 2025 & 2026
+                    <span class="paper-meta-line course-note">(A third-year undergraduate elective in microeconomic theory.)</span>
+                    <span class="paper-meta-line course-note"><a href="files/teaching/ecc3000_syllabus_2026.pdf">[syllabus]</a></span>
                 </li>
             </ul>
 
@@ -456,43 +560,53 @@
         </section>
 
         <section id="misc" class="tab-panel">
-            <p>I like running and hiking. Here is a list of some longer runs and hikes that I had fun with.</p>
-
-            <details class="runs-group">
-              <summary>Post Grad School</summary>
-            <ul class="teaching-list">
-                <li>Wonderland Track (30k), 2026 </li>
-                <li>Razorback Run (22k), 2026</li>
-                <li>Two Bays Trail Run (28k), 2026 </li>
-                <li>Barkin' Mad Ultra (20k), 2025 (with Dusty) </li>
-                <li>Mt Buffalo Sky Marathon, 2025 </li>
-                <li>Tour du Mont Blanc, 2024</li>
+            <details class="running-section links-section">
+                <summary>Useful links</summary>
+            <ul class="link-list">
+                <li><a href="https://melbourne-economics.org/">Melbourne Economics</a><span class="link-note">(a calendar of economics seminars and conferences in Melbourne, made by my colleagues at Monash)</span></li>
             </ul>
             </details>
 
+            <details class="running-section">
+                <summary>Running</summary>
+            <p class="running-intro">I like running and hiking. Here is a list of some longer runs and hikes that I had fun with.</p>
+
             <details class="runs-group">
-              <summary>During Grad School</summary>
-            <ul class="teaching-list">
-                <li>Avalon Benefit Run (50k), 2023</li>
-                <li>Bryce Canyon Ultra (50k), 2022</li>
-                <li>Sawback Trail (Banff to Lake Louise), 2022</li>
-                <li>High Sierra Trail (to Hamilton Lake), 2022</li>
-                <li>Trans-Zion Trek, 2021</li>
-                <li>Split Mountain, CA, 2021</li>
-                <li>Grand Canyon (South Kaibab to Bright Angel), 2021</li>
-                <li>Half Dome, 2021</li>
-                <li>Mt Langley, CA, 2021</li>
-                <li>LA Marathon, 2021</li>
-            </ul>
+                <summary>Post Grad School</summary>
+                <ul class="run-list">
+                    <li><span>Wonderland Track (30k)</span><span class="run-year">2026</span></li>
+                    <li><span>Razorback Run (22k)</span><span class="run-year">2026</span></li>
+                    <li><span>Two Bays Trail Run (28k)</span><span class="run-year">2026</span></li>
+                    <li><span>Barkin' Mad Ultra (20k) <span class="run-note">with Dusty</span></span><span class="run-year">2025</span></li>
+                    <li><span>Mt Buffalo Sky Marathon</span><span class="run-year">2025</span></li>
+                    <li><span>Tour du Mont Blanc</span><span class="run-year">2024</span></li>
+                </ul>
             </details>
 
             <details class="runs-group">
-              <summary>Before Grad School</summary>
-            <ul class="teaching-list">
-                <li>Mt Bartle Frere, Cairns </li>
-                <li>The Overland Track, Tasmania </li>
-                <li>Jinan to Qingdao via bicycle, China</li>
-            </ul>
+                <summary>During Grad School</summary>
+                <ul class="run-list">
+                    <li><span>Avalon Benefit Run (50k)</span><span class="run-year">2023</span></li>
+                    <li><span>Bryce Canyon Ultra (50k)</span><span class="run-year">2022</span></li>
+                    <li><span>Sawback Trail (Banff to Lake Louise)</span><span class="run-year">2022</span></li>
+                    <li><span>High Sierra Trail (to Hamilton Lake)</span><span class="run-year">2022</span></li>
+                    <li><span>Trans-Zion Trek</span><span class="run-year">2021</span></li>
+                    <li><span>Split Mountain, CA</span><span class="run-year">2021</span></li>
+                    <li><span>Grand Canyon (South Kaibab to Bright Angel)</span><span class="run-year">2021</span></li>
+                    <li><span>Half Dome</span><span class="run-year">2021</span></li>
+                    <li><span>Mt Langley, CA</span><span class="run-year">2021</span></li>
+                    <li><span>LA Marathon</span><span class="run-year">2021</span></li>
+                </ul>
+            </details>
+
+            <details class="runs-group">
+                <summary>Before Grad School</summary>
+                <ul class="run-list">
+                    <li><span>Mt Bartle Frere, Cairns</span></li>
+                    <li><span>The Overland Track, Tasmania</span></li>
+                    <li><span>Jinan to Qingdao via bicycle, China</span></li>
+                </ul>
+            </details>
             </details>
         </section>
     </div>
@@ -504,10 +618,6 @@
 </section>
 </div>
 
-<footer>
-    <div class="description">
-    </div>
-</footer>
 
 <script>
     const tabButtons = document.querySelectorAll('.tab-button');
